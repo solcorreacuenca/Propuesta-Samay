@@ -20,7 +20,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--bg); color: var(--text); overflow-x: hidden; scroll-behavior: smooth; }
 
-        /* Navegación */
         nav {
             position: fixed; top: 0; width: 100%; padding: 20px 5%;
             display: flex; justify-content: space-between; align-items: center;
@@ -29,7 +28,7 @@
         }
         .logo { font-weight: 800; letter-spacing: -1px; font-size: 1.2rem; }
         .logo span { color: var(--secondary); }
-        
+
         .nav-btns { display: flex; gap: 10px; }
         .nav-btn {
             padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border);
@@ -37,31 +36,27 @@
         }
         .nav-btn:hover, .nav-btn.active { background: var(--card); color: var(--text); border-color: var(--primary); }
 
-        /* Secciones */
         .page-section {
-            min-height: 100vh; padding: 100px 10% 40px; 
+            min-height: 100vh; padding: 100px 10% 40px;
             display: none; opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease;
             position: relative;
-            padding-bottom: 120px; /* Espacio para el footer */
+            padding-bottom: 120px;
         }
         .page-section.active { display: block; opacity: 1; transform: translateY(0); }
 
-        /* Títulos */
         h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
         h2 { font-size: 2rem; margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
         h2::before { content: ''; display: block; width: 40px; height: 4px; background: var(--grad); }
         .gradient-text { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* Estilos generales de contenido */
         .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px; }
         .why-me-list { list-style: none; margin-top: 20px; }
         .why-me-list li { margin-bottom: 20px; padding-left: 20px; border-left: 2px solid var(--primary); }
         .why-me-list h4 { color: var(--text); margin-bottom: 5px; }
         .why-me-list p { color: var(--dim); font-size: 0.95rem; line-height: 1.6; }
 
-        /* Process Steps */
         .process-container { display: flex; flex-direction: column; gap: 30px; margin-top: 40px; max-width: 900px; margin-left: auto; margin-right: auto;}
-        .process-step { 
+        .process-step {
             background: var(--card); border: 1px solid var(--border); padding: 30px; border-radius: 12px;
             position: relative; overflow: hidden; transition: 0.3s;
         }
@@ -71,85 +66,78 @@
         .step-content ul { list-style: none; color: var(--dim); font-size: 0.95rem; margin-top: 10px; }
         .step-content ul li::before { content: '•'; color: var(--secondary); margin-right: 10px; }
 
-        /* Methodology Box (MODIFICADO PARA ALINEACIÓN HORIZONTAL) */
         .methodology-box {
-            max-width: 1000px; margin: 60px auto 0; 
+            max-width: 1000px; margin: 60px auto 0;
             background: linear-gradient(180deg, rgba(22,22,26,0.5) 0%, rgba(94, 92, 230, 0.05) 100%);
             border: 1px solid var(--border); border-radius: 16px; padding: 40px;
         }
-        /* Grid de 4 columnas por defecto */
-        .meth-grid { 
-            display: grid; 
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 20px; 
-            margin-top: 30px; 
+        .meth-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
         }
         .meth-item { text-align: center; }
         .meth-item h4 { color: var(--text); margin-bottom: 10px; font-size: 1rem; margin-top: 15px; }
         .meth-item p { color: var(--dim); font-size: 0.85rem; line-height: 1.5; }
         .meth-icon { font-size: 2rem; display: block; margin-bottom: 5px; }
 
-        /* Pricing Accordion (NUEVO) */
         .invoice-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 40px; max-width: 800px; margin: 0 auto; }
-        
+
         .acc-item { border-bottom: 1px solid #27272a; }
         .acc-item:last-child { border-bottom: none; }
-        
-        .acc-header { 
-            display: flex; justify-content: space-between; align-items: center; 
+
+        .acc-header {
+            display: flex; justify-content: space-between; align-items: center;
             padding: 20px 0; cursor: pointer; transition: 0.2s;
         }
         .acc-header:hover .item-name { color: var(--secondary); }
-        
+
         .item-name-wrap { display: flex; align-items: center; gap: 10px; }
         .item-name { font-weight: 600; color: var(--text); transition: 0.2s; }
         .acc-chevron { width: 14px; height: 14px; fill: var(--dim); transition: transform 0.3s ease; }
-        
+
         .item-price { font-family: monospace; font-size: 1.1rem; color: var(--text); font-weight: 600; }
 
-        .acc-content { 
-            max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; 
+        .acc-content {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
             background: rgba(255,255,255,0.02); border-radius: 8px;
         }
         .acc-inner { padding: 15px 20px 20px; font-size: 0.9rem; color: var(--dim); line-height: 1.6; }
         .acc-inner strong { color: var(--primary); font-weight: 600; }
 
-        /* Estado abierto del acordeón */
         .acc-item.open .acc-chevron { transform: rotate(180deg); fill: var(--primary); }
-        .acc-item.open .acc-content { max-height: 200px; margin-bottom: 20px; }
+        .acc-item.open .acc-content { max-height: 220px; margin-bottom: 20px; }
 
-        .total-row { 
-            border-top: 2px solid var(--text); margin-top: 30px; padding-top: 20px; 
-            display: flex; justify-content: space-between; align-items: center; 
+        .total-row {
+            border-top: 2px solid var(--text); margin-top: 30px; padding-top: 20px;
+            display: flex; justify-content: space-between; align-items: center;
         }
 
-        .payment-plan { 
-            display: flex; gap: 20px; margin-top: 40px; 
+        .payment-plan {
+            display: flex; gap: 20px; margin-top: 40px;
             background: rgba(94, 92, 230, 0.1); padding: 20px; border-radius: 12px; border: 1px solid var(--primary);
         }
         .plan-col { flex: 1; text-align: center; }
         .plan-percent { font-size: 2rem; font-weight: 800; color: var(--primary); }
 
-        /* Terms Box */
-        .terms-box { 
-            background: var(--card); border: 1px solid var(--border); padding: 40px; 
+        .terms-box {
+            background: var(--card); border: 1px solid var(--border); padding: 40px;
             border-radius: 12px; color: var(--dim); font-size: 0.9rem; line-height: 1.8;
             max-height: 60vh; overflow-y: auto;
         }
         .terms-box ol { padding-left: 20px; }
         .terms-box li { margin-bottom: 15px; }
 
-        /* CTA */
         .cta-main {
             display: inline-flex; padding: 15px 40px; background: var(--grad);
-            border-radius: 40px; text-decoration: none; color: white; font-weight: 600; 
+            border-radius: 40px; text-decoration: none; color: white; font-weight: 600;
             margin-top: 30px; border: none; cursor: pointer; font-size: 1rem;
             align-items: center; gap: 10px; margin-left: auto; margin-right: auto;
             transition: transform 0.2s ease;
         }
         .cta-main:hover { transform: translateY(-2px); }
 
-        /* Footer Global en cada sección */
         .section-footer {
             position: absolute; bottom: 0; left: 0; width: 100%;
             padding: 30px 10%;
@@ -165,10 +153,7 @@
         .footer-item a:hover { color: var(--primary); }
         .icon { width: 18px; height: 18px; fill: currentColor; }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .meth-grid { grid-template-columns: repeat(2, 1fr); } /* 2x2 en tablets */
-        }
+        @media (max-width: 1024px) { .meth-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
             .overview-grid { grid-template-columns: 1fr; }
             h1 { font-size: 2.5rem; }
@@ -176,7 +161,7 @@
             .nav-btns { display: none; }
             .section-footer { flex-direction: column; align-items: flex-start; gap: 15px; }
             .footer-info { flex-direction: column; align-items: flex-start; gap: 10px; }
-            .meth-grid { grid-template-columns: 1fr; } /* 1 col en mobile */
+            .meth-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -220,31 +205,32 @@
     <div style="max-width: 900px; margin: 0 auto;">
         <h1 style="text-align: center;">Proyecto <span class="gradient-text">Samay</span></h1>
         <p style="text-align: center; color: var(--dim); font-size: 1.1rem; margin-bottom: 60px;">
-            Propuesta de Identidad Integral & E-commerce Experience
+            Identidad y eCommerce para revelar el valor, simplificar la complejidad y convertir en ventas
         </p>
 
         <div class="overview-grid">
             <div>
                 <h2>Overview</h2>
                 <p style="color: var(--dim); line-height: 1.7;">
-                    Transformaré la visión de <strong>"Samay"</strong> en un ecosistema de marca sólido y una plataforma de venta escalable.<br><br>
-                    El objetivo principal es lanzar una identidad visual potente y una tienda online (Shopify) orientada a la conversión. El proyecto abarca desde la creación de la marca y su normativa técnica, hasta su aplicación física en packaging y su despliegue digital.
+                    Vamos a convertir la visión de <strong>Samay</strong> en un sistema de marca claro, humano y reconocible, y en una tienda Shopify preparada para escalar.<br><br>
+                    El foco no es solo “que se vea bien”, sino que <strong>se entienda rápido</strong>, genere <strong>confianza</strong> y guíe a la compra con mínima fricción.<br><br>
+                    Entregamos un ecosistema completo, identidad visual, manual avanzado, dirección de arte, diseño UX/UI de alta conversión, assets, kit social y packaging, todo coherente, modular y listo para activarse.
                 </p>
             </div>
             <div>
-                <h2>Why Me</h2>
+                <h2>Why Dark Matter</h2>
                 <ul class="why-me-list">
                     <li>
-                        <h4>Visión de Producto</h4>
-                        <p>Mi experiencia en Product Design garantiza que la estética siempre esté al servicio de la funcionalidad.</p>
+                        <h4>Estrategia visible, decisiones con intención</h4>
+                        <p>Cada elección, color, tipografía, layout, responde a un objetivo, comprensión, diferenciación, confianza y conversión.</p>
                     </li>
                     <li>
-                        <h4>Enfoque Sistémico</h4>
-                        <p>Creo sistemas visuales escalables que permitirán a tu marca crecer sin perder coherencia.</p>
+                        <h4>Sistema escalable, no piezas sueltas</h4>
+                        <p>Creamos un framework de marca y diseño que te permite crecer sin perder consistencia, en web, redes, packaging y futuras campañas.</p>
                     </li>
                     <li>
-                        <h4>Compromiso con los Plazos</h4>
-                        <p>Los hitos marcados se cumplirán estrictamente.</p>
+                        <h4>Experiencia Shopify orientada a resultados</h4>
+                        <p>Diseñamos la navegación para reducir fricción, priorizar CTAs, ordenar la información y mejorar el camino a compra, especialmente en mobile.</p>
                     </li>
                 </ul>
             </div>
@@ -258,52 +244,57 @@
 <section id="sec-process" class="page-section">
     <div style="max-width: 1000px; margin: 0 auto;">
         <h2 style="justify-content: center;">El <span class="gradient-text">Proceso</span></h2>
-        
+
         <div class="process-container">
             <div class="process-step">
                 <div class="step-number">01</div>
-                <div class="step-header">Descubrimiento & Estrategia</div>
-                <p style="color: white;">El cimiento de la marca.</p>
+                <div class="step-header">Descubrimiento & Dirección</div>
+                <p style="color: white;">Alineamos mensaje, diferencia y foco comercial.</p>
                 <div class="step-content">
                     <ul>
-                        <li>Kickoff y análisis de competencia.</li>
-                        <li>Exploración creativa y presentación de propuestas.</li>
-                        <li>Entregable: Identidad Visual y Estrategia base.</li>
+                        <li>Kickoff, objetivos de negocio, públicos y mapa de decisión.</li>
+                        <li>Análisis de competencia, categorías y oportunidades de posicionamiento.</li>
+                        <li>Exploración creativa y 5 rutas de identidad para elegir con criterio.</li>
+                        <li>Entregable: base estratégica y dirección creativa de la marca.</li>
                     </ul>
                 </div>
             </div>
+
             <div class="process-step">
                 <div class="step-number">02</div>
-                <div class="step-header">Diseño UX/UI & Arte</div>
-                <p style="color: white;">Definiendo la experiencia.</p>
+                <div class="step-header">Sistema de Marca & Manual</div>
+                <p style="color: white;">Coherencia total en cada punto de contacto.</p>
                 <div class="step-content">
                     <ul>
-                        <li>Narrativa visual y estilo fotográfico.</li>
-                        <li>Diseño de interfaces (Wireframes y UI).</li>
-                        <li>Entregable: Prototipos visuales y Guía de Arte.</li>
+                        <li>Construcción del sistema visual, paleta, tipografías, retículas y usos.</li>
+                        <li>Reglas claras para mantener consistencia sin depender del equipo creativo.</li>
+                        <li>Entregable: manual avanzado listo para implementar en digital y físico.</li>
                     </ul>
                 </div>
             </div>
+
             <div class="process-step">
                 <div class="step-number">03</div>
-                <div class="step-header">Desarrollo Web & Pack</div>
-                <p style="color: white;">Construcción y tangibilización.</p>
+                <div class="step-header">UX/UI Shopify & Dirección de Arte</div>
+                <p style="color: white;">Menos fricción, más intención de compra.</p>
                 <div class="step-content">
                     <ul>
-                        <li>Configuración Shopify y personalización.</li>
-                        <li>Diseño técnico de envases y artes finales.</li>
-                        <li>Entregable: Tienda operativa y archivos de imprenta.</li>
+                        <li>Arquitectura de navegación, jerarquía de contenidos y enfoque mobile first.</li>
+                        <li>Dirección de arte, narrativa visual y guía de estilo fotográfico.</li>
+                        <li>Entregable: prototipos UI y guía de arte para producción y contenido.</li>
                     </ul>
                 </div>
             </div>
+
             <div class="process-step">
                 <div class="step-number">04</div>
-                <div class="step-header">Lanzamiento</div>
-                <p style="color: white;">Listos para vender.</p>
+                <div class="step-header">Build, QA & Lanzamiento</div>
+                <p style="color: white;">Todo listo para vender desde el día uno.</p>
                 <div class="step-content">
                     <ul>
-                        <li>QA, revisión mobile y Kit Social Media.</li>
-                        <li>Web publicada y Handover de archivos.</li>
+                        <li>Configuración Shopify, personalización avanzada y set de assets clave.</li>
+                        <li>QA completo, performance percibida, revisión responsive y consistencia.</li>
+                        <li>Kit Social Media y handover organizado de archivos y documentación.</li>
                     </ul>
                 </div>
             </div>
@@ -315,22 +306,22 @@
                 <div class="meth-item">
                     <span class="meth-icon">🗓️</span>
                     <h4>Weekly Syncs</h4>
-                    <p>Reuniones semanales para presentar avances y ajustar prioridades.</p>
+                    <p>Una reunión semanal para decisiones, validación y priorización, sin ruido y con próximos pasos claros.</p>
                 </div>
                 <div class="meth-item">
                     <span class="meth-icon">💬</span>
                     <h4>Comunicación</h4>
-                    <p>Updates diarios vía <strong>WhatsApp</strong> o Email para mantener el flujo ágil.</p>
+                    <p>Canal único por WhatsApp o email, con updates breves y decisiones por escrito para mantener velocidad.</p>
                 </div>
                 <div class="meth-item">
                     <span class="meth-icon">🛠️</span>
                     <h4>Herramientas</h4>
-                    <p>Figma, Adobe Creative Suite, Notion e IA Generativa para optimizar procesos.</p>
+                    <p>Figma y Adobe, más IA para acelerar research y prototipado, el tiempo se invierte en estrategia y calidad.</p>
                 </div>
                 <div class="meth-item">
                     <span class="meth-icon">∞</span>
                     <h4>Soporte</h4>
-                    <p>Soporte post-lanzamiento bajo tarifa por hora fijada.</p>
+                    <p>Soporte post lanzamiento por horas, para evolutivos, ajustes y nuevas piezas sin rehacer el sistema.</p>
                 </div>
             </div>
         </div>
@@ -339,8 +330,8 @@
 
 <section id="sec-pricing" class="page-section">
     <div style="max-width: 800px; margin: 0 auto;">
-        <h2 style="justify-content: center;">Tarfias <span </h2>
-        
+        <h2 style="justify-content: center;">Presupuesto <span class="gradient-text">por entregable</span></h2>
+
         <div class="invoice-box">
             <div class="acc-item" onclick="toggleItem(this)">
                 <div class="acc-header">
@@ -352,10 +343,10 @@
                 </div>
                 <div class="acc-content">
                     <div class="acc-inner">
-                        • <strong>5 Propuestas</strong> de Logotipo originales.<br>
-                        • Refinamiento final de la opción seleccionada.<br>
-                        • Investigación de mercado y análisis de competencia.<br>
-                        • Archivos finales en vectores (AI, SVG) y formatos web.
+                        • <strong>5 propuestas</strong> de logotipo con rutas claras de diferenciación.<br>
+                        • Refinamiento final, versiones y jerarquías para usos reales.<br>
+                        • Revisión de competencia para evitar “más de lo mismo” y ganar reconocimiento.<br>
+                        • Entrega en AI, SVG, PDF y formatos web, listo para implementar.
                     </div>
                 </div>
             </div>
@@ -364,16 +355,16 @@
                 <div class="acc-header">
                     <div class="item-name-wrap">
                         <svg class="acc-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-                        <span class="item-name">Manual de Marca</span>
+                        <span class="item-name">Manual de Marca Avanzado</span>
                     </div>
                     <span class="item-price">512 €</span>
                 </div>
                 <div class="acc-content">
                     <div class="acc-inner">
-                        • Definición técnica de paleta de color (Print/Web).<br>
-                        • Normativa de uso del logotipo y retículas.<br>
-                        • Jerarquías tipográficas corporativas.<br>
-                        • Usos correctos e incorrectos de la marca.
+                        • Paleta técnica print y web, con criterios de contraste y consistencia.<br>
+                        • Normas de uso del logo, retículas, márgenes, tamaños mínimos y fondos.<br>
+                        • Sistema tipográfico con jerarquías, estilos y aplicaciones reales.<br>
+                        • Do’s and don’ts para mantener calidad en equipo y proveedores.
                     </div>
                 </div>
             </div>
@@ -382,15 +373,15 @@
                 <div class="acc-header">
                     <div class="item-name-wrap">
                         <svg class="acc-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-                        <span class="item-name">Dirección de Arte</span>
+                        <span class="item-name">Dirección de Arte y Estilo</span>
                     </div>
                     <span class="item-price">407 €</span>
                 </div>
                 <div class="acc-content">
                     <div class="acc-inner">
-                        • Desarrollo de la narrativa visual global.<br>
-                        • Definición de estilo fotográfico (look & feel).<br>
-                        • Coherencia visual aplicada al ecosistema digital.
+                        • Narrativa visual para que la marca “se sienta” consistente y premium.<br>
+                        • Guía de fotografía, encuadres, luz, textura, fondos y tratamiento.<br>
+                        • Reglas visuales aplicables a web, redes y campañas para acelerar producción.
                     </div>
                 </div>
             </div>
@@ -405,10 +396,10 @@
                 </div>
                 <div class="acc-content">
                     <div class="acc-inner">
-                        • Configuración técnica de la tienda y setup.<br>
-                        • Diseño de interfaz (UI) personalizado y optimización visual.<br>
-                        • Arquitectura de navegación (UX) enfocada a conversión.<br>
-                        • Adaptación responsive (Mobile first).
+                        • Setup Shopify y base para una tienda escalable.<br>
+                        • UI premium, consistente con la marca y preparada para contenido real.<br>
+                        • UX enfocada a conversión, jerarquía, CTAs, confianza y claridad en el catálogo.<br>
+                        • Responsive real, diseñado primero para mobile, donde ocurre la compra.
                     </div>
                 </div>
             </div>
@@ -417,15 +408,15 @@
                 <div class="acc-header">
                     <div class="item-name-wrap">
                         <svg class="acc-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-                        <span class="item-name">Assets Digitales</span>
+                        <span class="item-name">Assets Digitales Premium</span>
                     </div>
                     <span class="item-price">856 €</span>
                 </div>
                 <div class="acc-content">
                     <div class="acc-inner">
-                        • Diseño de banners principales (Home, Colecciones).<br>
-                        • Iconografía personalizada para la web (Trust badges).<br>
-                        • Piezas gráficas exclusivas para el lanzamiento.
+                        • Banners clave para Home y Colecciones, con foco en claridad y click intent.<br>
+                        • Iconografía y trust cues para reducir dudas y aumentar confianza.<br>
+                        • Piezas de lanzamiento listas para activar campañas y comunicar propuesta.
                     </div>
                 </div>
             </div>
@@ -434,15 +425,15 @@
                 <div class="acc-header">
                     <div class="item-name-wrap">
                         <svg class="acc-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-                        <span class="item-name">Kit Social Media</span>
+                        <span class="item-name">Kit Social Media Completo</span>
                     </div>
                     <span class="item-price">617 €</span>
                 </div>
                 <div class="acc-content">
                     <div class="acc-inner">
-                        • Diseño de avatares y portadas de perfil.<br>
-                        • Sistema de plantillas editables para posts recurrentes.<br>
-                        • Adaptación de la identidad al entorno social.
+                        • Avatar y portada coherentes con el sistema de marca.<br>
+                        • Plantillas editables para publicar rápido sin perder calidad visual.<br>
+                        • Framework de contenido visual para escalar presencia y reconocimiento.
                     </div>
                 </div>
             </div>
@@ -457,9 +448,9 @@
                 </div>
                 <div class="acc-content">
                     <div class="acc-inner">
-                        • Diseño gráfico aplicado al envase principal.<br>
-                        • Preparación de artes finales para imprenta.<br>
-                        • Mockups para visualización.
+                        • Propuesta estética alineada a marca y percepción de valor del producto.<br>
+                        • Artes finales para imprenta con especificaciones técnicas correctas.<br>
+                        • Mockups para validar impacto y coherencia antes de producir.
                     </div>
                 </div>
             </div>
@@ -473,15 +464,15 @@
                 <div class="plan-col">
                     <div class="plan-percent">50%</div>
                     <div style="font-size: 0.9rem; font-weight: 600;">INICIO</div>
-                    <div style="font-size: 0.8rem; color: var(--dim);">Reserva de fecha</div>
+                    <div style="font-size: 0.8rem; color: var(--dim);">Reserva de fecha y arranque</div>
                 </div>
                 <div class="plan-col">
                     <div class="plan-percent">50%</div>
                     <div style="font-size: 0.9rem; font-weight: 600;">ENTREGA</div>
-                    <div style="font-size: 0.8rem; color: var(--dim);">Aprobación final</div>
+                    <div style="font-size: 0.8rem; color: var(--dim);">Aprobación final y handover</div>
                 </div>
             </div>
-            
+
             <p style="text-align: center; margin-top: 20px; font-size: 0.8rem; color: var(--dim);">
                 Pago mediante transferencia bancaria.
             </p>
@@ -492,40 +483,39 @@
 <section id="sec-terms" class="page-section">
     <div style="max-width: 800px; margin: 0 auto;">
         <h2 style="justify-content: center;">Términos & <span class="gradient-text">Condiciones</span></h2>
-        
+
         <div class="terms-box">
             <ol>
-                <li><strong>Estructura de pago:</strong> 50% por adelantado y 50% después de la aprobación del diseño final y antes de la entrega de archivos. Pago mediante transferencia bancaria. IVA no incluido.</li>
-                <li><strong>Recursos externos:</strong> Los recursos necesarios para el diseño, como fuentes de pago, fotos de stock e iconos premium, no están incluidos en los precios anteriores. Serán pagados por el cliente, y los derechos de uso serán suyos.</li>
-                <li><strong>Revisiones:</strong> El número máximo de revisiones por fase/pantalla será de 3. Revisiones adicionales se cotizarán aparte.</li>
-                <li><strong>Trabajo adicional:</strong> El trabajo adicional fuera del alcance se cobrará por hora o bajo nuevo presupuesto.</li>
-                <li><strong>Soporte Post-Proyecto:</strong> Una vez entregado el proyecto, cualquier trabajo de mantenimiento o soporte se facturará según una tarifa horaria acordada.</li>
-                <li><strong>Derechos de uso:</strong> Una vez finalizado el trabajo y recibido el pago completo (100%), no se utilizará los diseños para otro proyecto y se le enviará los archivos editables al cliente .</li>
-                <li><strong>Cancelación:</strong> En caso de cancelación, el anticipo inicial no es reembolsable.</li>
+                <li><strong>Estructura de pago:</strong> 50% por adelantado y 50% tras la aprobación final y antes de la entrega de archivos. Pago mediante transferencia bancaria. IVA no incluido.</li>
+                <li><strong>Recursos externos:</strong> Fuentes de pago, fotos de stock e iconos premium no están incluidos. Se adquieren a nombre del cliente, con sus derechos de uso.</li>
+                <li><strong>Revisiones:</strong> Máximo 3 revisiones por fase o pantalla. Revisiones extra se cotizan aparte.</li>
+                <li><strong>Fuera de alcance:</strong> Cualquier trabajo no contemplado en esta propuesta se presupuestará por hora o mediante un nuevo alcance.</li>
+                <li><strong>Soporte post lanzamiento:</strong> Evolutivos, ajustes y soporte se gestionan por bolsa de horas según tarifa acordada.</li>
+                <li><strong>Derechos de uso:</strong> Con el pago completo, el cliente recibe los archivos editables y el derecho de uso del diseño para su marca.</li>
+                <li><strong>Cancelación:</strong> El anticipo inicial no es reembolsable, ya que reserva agenda y cubre horas de inicio y exploración.</li>
             </ol>
         </div>
-        
-        <div style="height: 50px;"></div> </div>
+
+        <div style="height: 50px;"></div>
+    </div>
 </section>
 
 <script>
-    // Inyectar el footer en todas las secciones
     const footerContent = document.getElementById('footer-template').innerHTML;
     document.querySelectorAll('.page-section').forEach(section => {
         section.insertAdjacentHTML('beforeend', footerContent);
     });
 
-    // Función para navegación entre pestañas
     function showSec(id) {
         document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
         document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-        
+
         const section = document.getElementById(id);
         if(section) {
             section.classList.add('active');
             window.scrollTo(0, 0);
         }
-        
+
         const btns = document.querySelectorAll('.nav-btn');
         btns.forEach(btn => {
             if(btn.getAttribute('onclick').includes(id)) {
@@ -534,12 +524,7 @@
         });
     }
 
-    // Función para el acordeón de precios
     function toggleItem(element) {
-        // Opcional: Cerrar otros items al abrir uno nuevo
-        // document.querySelectorAll('.acc-item').forEach(item => {
-        //     if(item !== element) item.classList.remove('open');
-        // });
         element.classList.toggle('open');
     }
 </script>
